@@ -16,7 +16,7 @@ except ModuleNotFoundError:
 ip = get('https://api.ipify.org').text
 print(f'Newer Versions: /connect {ip}\nOlder Versions: /wsserver {ip}')
 try:
-  from MinecraftWS import MinecraftWebSocket, Event
+  from MinecraftWS import MinecraftWebSocket, Event, Command
 except ModuleNotFoundError:
   log += 1
   print(f"Log #{log}: MinecraftWS module not found. Adding...")
