@@ -7,7 +7,7 @@ Indigo Mod is a Minecraft Bedrock modloader using web socket connections.
 ## Usage
 1. Open Minecraft Bedrock Edition
 2. Create a new world with cheats enabled **or** use an existing world with cheats enabled.
-3. Open `run.cmd`, **not `indigomode.py`**. *First time use may take a while to load.*
+3. Open `run.cmd`, **not `indigomod.py`**. *First time use may take a while to load.*
 4. Open the chat window in Minecraft.
 5. Enter `/connect <code>`. You can find your code in the window that opened when you ran `run.cmd`.
 6. Open the chat window in Minecraft.
@@ -20,3 +20,4 @@ IndigoMod is **not** responsible for harmful plugins. A list of approved plugins
 1. To install a plugin, download the plugin file. It should look like `plugin.py`.
 2. Locate the `indigomod/plugins` directory. If you have never ran IndigoMod before, the directory may not appear.
 3. Place the plugin into the `indigomod/plugins` directory.
+bh 

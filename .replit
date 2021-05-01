@@ -1,0 +1,2 @@
+language = "bash"
+run = "echo Can not be run on Replit."
