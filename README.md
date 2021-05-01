@@ -20,4 +20,17 @@ IndigoMod is **not** responsible for harmful plugins. A list of approved plugins
 1. To install a plugin, download the plugin file. It should look like `plugin.py`.
 2. Locate the `indigomod/plugins` directory. If you have never ran IndigoMod before, the directory may not appear.
 3. Place the plugin into the `indigomod/plugins` directory.
-bh 
+## Developing Plugins
+This is a tutorial for developers. You shoud have basic Python skills.
+### Imports
+Your plugin should have one import, `from api import *`. This import is not required if you are not going to do anything ingame (for example, just using it to log actions)
+IndigoMod just grabs variabled from your file, so there is no need for special naming or other imports.
+### Events
+You can find a full list of events here. https://github.com/Beta5051/MinecraftWS/blob/master/MinecraftWS/event.py
+```py
+ def onAchivement(args): # You can set this to anything. args is a required argument, even if you are not going to use them.
+  print("GG! You got an achivement!")
+ 
+ events = {
+  "AwardAchievement" : onAchivement # onAchivement not onAchivement()
+ }
