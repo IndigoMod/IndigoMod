@@ -37,4 +37,5 @@ You can find a full list of events here. https://github.com/Beta5051/MinecraftWS
      "AwardAchievement" : onAchivement # onAchivement not onAchivement()
    }
  ```
+ 
 </center>
