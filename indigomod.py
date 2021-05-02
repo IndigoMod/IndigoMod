@@ -1,10 +1,10 @@
 import os
 import pathlib
-import cool.indigomod
-from cool.indigomod.print import *
+from dev.ucyt.indigomod.indigomod.print import *
+from dev.ucyt.indigomod.indigomod.pip import *
 
 log = 0
-out("Welcome to Indigo Mod\nWe are making sure everything is setup correctly...")
+out("Welcome to Indigo Mod. We are making sure everything is setup correctly...")
 if not os.path.isdir("plugins"):
     log += 1
     warn(f"Log #{log}: Plugins folder not found. Adding...")
@@ -13,8 +13,8 @@ try:
     from requests import get
 except ModuleNotFoundError:
     log += 1
-    warn(f"Log #{log}: requests module not found. Adding...")
-    os.system("pip install requests")
+    modnotfound("requests", log)
+    install("requests")
     from requests import get
 ip = get('https://api.ipify.org').text
 notif(f'Newer Versions: /connect {ip}\nOlder Versions: /wsserver {ip}')
@@ -22,8 +22,8 @@ try:
     from MinecraftWS import MinecraftWebSocket, Event, Command
 except ModuleNotFoundError:
     log += 1
-    warn(f"Log #{log}: MinecraftWS module not found. Adding...")
-    os.system("pip install MinecraftWS")
+    modnotfound("MinecraftWS", log)
+    install("MinecraftWS")
     from MinecraftWS import MinecraftWebSocket, Event
 
 

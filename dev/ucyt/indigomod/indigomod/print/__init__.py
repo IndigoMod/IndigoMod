@@ -1,6 +1,3 @@
-from cool.indigomod.get import *
-
-
 def out(msg):
     print("[Indigo - Out] - " + msg)
 
@@ -15,3 +12,7 @@ def err(msg):
 
 def notif(msg):
     print("[Indigo - Message] - " + msg)
+
+
+def modnotfound(mnf, log):
+    warn(f"Log #{log}: {mnf} module not found. Adding...")
