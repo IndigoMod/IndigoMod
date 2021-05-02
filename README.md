@@ -1,5 +1,5 @@
 <div align="center">
-<img src="/assets/imapi.png" width="500" height="167">
+<img src="/assets/imapi.png" width="500" height="167"><br>
 Indigo Mod is a Minecraft Bedrock modloader using web socket connections.
 <h2>Installation</h2>
 1. Download Python (**Python 3 recommended**) https://python.org
