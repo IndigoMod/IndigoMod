@@ -29,8 +29,8 @@ IndigoMod just grabs variabled from your file, so there is no need for special n
 You can find a full list of events here. https://github.com/Beta5051/MinecraftWS/blob/master/MinecraftWS/event.py
 <br>
  def onAchivement(args): # You can set this to anything. args is a required argument, even if you are not going to use them.<br>
-  print("GG! You got an achivement!")<br>
+ &nbsp;print("GG! You got an achivement!")<br>
  <br>
  events = {<br>
-  "AwardAchievement" : onAchivement # onAchivement not onAchivement()<br>
+ &nbsp;"AwardAchievement" : onAchivement # onAchivement not onAchivement()<br>
  }
