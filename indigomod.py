@@ -4,6 +4,15 @@ from dev.ucyt.indigomod.indigomod.print import *
 from dev.ucyt.indigomod.indigomod.pip import *
 
 log = 0
+try:
+    from colored import *
+    from colored import fore, back, style
+except ModuleNotFoundError:
+    log += 1
+    modnotfound("colored", log)
+    install("colored")
+    from colored import *
+    from colored import fore, back, style
 out("Welcome to Indigo Mod. We are making sure everything is setup correctly...")
 if not os.path.isdir("plugins"):
     log += 1
@@ -17,7 +26,7 @@ except ModuleNotFoundError:
     install("requests")
     from requests import get
 ip = get('https://api.ipify.org').text
-notif(f'Newer Versions: /connect {ip}\nOlder Versions: /wsserver {ip}')
+notif(f'Newer Versions: /connect {ip}. Older Versions: /wsserver {ip}')
 try:
     from MinecraftWS import MinecraftWebSocket, Event, Command
 except ModuleNotFoundError:
@@ -29,7 +38,7 @@ except ModuleNotFoundError:
 
 class MWS(MinecraftWebSocket):
     async def on_connect(self):
-        out('Connected to Minecraft')
+        out('Connected to Minecraft!')
         await self.add_event(Event.BlockBroken)
 
     async def on_disconnect(self):
@@ -40,5 +49,4 @@ class MWS(MinecraftWebSocket):
             ...
 
 
-out("Running websocket...")
 MWS().run()
