@@ -27,7 +27,7 @@ Your plugin should have one import, <code>from api import *</code>. This import 
 IndigoMod just grabs variabled from your file, so there is no need for special naming or other imports.
 <h3>Events</h3>
 You can find a full list of events here. https://github.com/Beta5051/MinecraftWS/blob/master/MinecraftWS/event.py
-<br>
+<br><br>
  def onAchivement(args): # You can set this to anything. args is a required argument, even if you are not going to use them.<br>
  &nbsp;print("GG! You got an achivement!")<br>
  <br>
