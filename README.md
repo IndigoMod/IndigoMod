@@ -1,5 +1,4 @@
-<center>
- 
+<div align="center">
 <h1>IndigoMod</h1>
 Indigo Mod is a Minecraft Bedrock modloader using web socket connections.
 <h2>Installation</h2>
@@ -39,4 +38,4 @@ You can find a full list of events here. https://github.com/Beta5051/MinecraftWS
    }
  ```
 
-</center>
+</div>
