@@ -2,51 +2,47 @@ import os
 import pathlib
 from dev.ucyt.indigomod.indigomod.print import *
 from dev.ucyt.indigomod.indigomod.pip import *
+from dev.ucyt.indigomod.indigomod.utility import *
 
 log = 0
-try:
-    from colored import *
-    from colored import fore, back, style
-except ModuleNotFoundError:
-    log += 1
-    modnotfound("colored", log)
-    install("colored")
-    from colored import *
-    from colored import fore, back, style
+installmodules(log)
+from MinecraftWS import MinecraftWebSocket, Event
+from colored import fore, back, style
+from requests import get
 out("Welcome to Indigo Mod. We are making sure everything is setup correctly...")
 if not os.path.isdir("plugins"):
     log += 1
     warn(f"Log #{log}: Plugins folder not found. Adding...")
     os.makedir("plugins")
-try:
-    from requests import get
-except ModuleNotFoundError:
-    log += 1
-    modnotfound("requests", log)
-    install("requests")
-    from requests import get
 ip = get('https://api.ipify.org').text
 notif(f'Newer Versions: /connect {ip}. Older Versions: /wsserver {ip}')
-try:
-    from MinecraftWS import MinecraftWebSocket, Event, Command
-except ModuleNotFoundError:
-    log += 1
-    modnotfound("MinecraftWS", log)
-    install("MinecraftWS")
-    from MinecraftWS import MinecraftWebSocket, Event
-
-
 class MWS(MinecraftWebSocket):
     async def on_connect(self):
         out('Connected to Minecraft!')
         await self.add_event(Event.BlockBroken)
-
     async def on_disconnect(self):
         out('Disconnected. Reload Indigo Mod to reconnect.')
-
     async def on_event(self, event: str, properties: dict):
         if event == Event.BlockBroken:
             ...
-
-
+        elif event == Event.MenuShown:
+            ...
+        elif event == Event.BlockPlaced:
+            ...
+        elif event == Event.AdditionalContentLoaded:
+            ...
+        elif event == Event.AgentCommand:
+            ...
+        elif event == Event.WorldGenerated:
+            ...
+        elif event == Event.MultiplayerRoundStart:
+            ...
+        elif event == Event.ApiInit:
+            ...
+        elif event == Event.WorldUnloaded:
+            ...
+        elif event == Event.AppPaused:
+            ...
+        elif event == Event.AppResumed:
+            ...
 MWS().run()

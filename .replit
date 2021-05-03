@@ -1,2 +1,2 @@
 language = "bash"
-run = "echo Can not be run on Replit."
+run = "echo The Indigo modloader cannot be run on replit."
