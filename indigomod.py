@@ -1,15 +1,13 @@
-import os
-import pathlib
-from dev.ucyt.indigomod.print import *
-from dev.ucyt.indigomod.pip import *
-from dev.ucyt.indigomod.utility import *
-from dev.ucyt.indigomod.event.handler import *
-from dev.ucyt.indigomod.net import *
+from api.dev.ucyt.indigomod.event.handler import *
+from api.dev.ucyt.indigomod.print import *
+from api.dev.ucyt.indigomod.pip import *
+from api.dev.ucyt.indigomod.net import *
+from api.dev.ucyt.indigomod.utility import *
+from api.dev.ucyt.indigomod.event import *
 log = 0
 installmodules(log)
 from MinecraftWS import MinecraftWebSocket, Event
-from colored import fore, back, style
-from requests import get
+
 out("Welcome to Indigo Mod. We are making sure everything is setup correctly...")
 if not os.path.isdir("plugins"):
     log += 1

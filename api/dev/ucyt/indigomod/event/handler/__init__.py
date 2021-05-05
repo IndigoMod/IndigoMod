@@ -1,5 +1,4 @@
 from MinecraftWS import Event
-from dev.ucyt.indigomod.print import *
 def handle(event):
     if event == Event.BlockBroken:
         ...
