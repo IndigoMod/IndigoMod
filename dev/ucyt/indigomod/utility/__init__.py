@@ -1,5 +1,5 @@
-from dev.ucyt.indigomod.indigomod.print import *
-from dev.ucyt.indigomod.indigomod.pip import *
+from dev.ucyt.indigomod.print import *
+from dev.ucyt.indigomod.pip import *
 def installmodules(log):
     try:
         from requests import get

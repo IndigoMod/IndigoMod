@@ -1,9 +1,9 @@
 import os
 import pathlib
-from dev.ucyt.indigomod.indigomod.print import *
-from dev.ucyt.indigomod.indigomod.pip import *
-from dev.ucyt.indigomod.indigomod.utility import *
-from dev.ucyt.indigomod.indigomod.handleevent import *
+from dev.ucyt.indigomod.print import *
+from dev.ucyt.indigomod.pip import *
+from dev.ucyt.indigomod.utility import *
+from dev.ucyt.indigomod.event.handler import *
 
 log = 0
 installmodules(log)
@@ -17,12 +17,18 @@ if not os.path.isdir("plugins"):
     os.makedir("plugins")
 ip = get('https://api.ipify.org').text
 notif(f'Newer Versions: /connect {ip}. Older Versions: /wsserver {ip}')
+
+
 class MWS(MinecraftWebSocket):
     async def on_connect(self):
         out('Connected to Minecraft!')
         await self.add_event(Event.BlockBroken)
+
     async def on_disconnect(self):
         out('Disconnected. Reload Indigo Mod to reconnect.')
+
     async def on_event(self, event: str, properties: dict):
         handle(event)
+
+
 MWS().run()
