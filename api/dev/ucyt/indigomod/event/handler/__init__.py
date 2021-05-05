@@ -1,4 +1,9 @@
 from MinecraftWS import Event
+
+import api.dev.ucyt.indigomod.exc
+from api.dev.ucyt.indigomod.short import throw
+
+
 def handle(event):
     if event == Event.BlockBroken:
         ...
@@ -105,4 +110,4 @@ def handle(event):
     elif event == Event.JukeboxUsed:
         ...
     else:
-        warn("Unimplemented event triggered: " + event + ".")
+        throw(api.dev.ucyt.indigomod.exc.IndigoModGenericException("Unimplemented event triggered: " + event + ". IndigoMod will not continue."))
